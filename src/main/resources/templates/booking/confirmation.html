@@ -3,6 +3,74 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Booking Confirmation</title>
+    <style>
+        /* Background image for the page */
+        body {
+            background-image: url('/img/7.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+      
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .alert {
+            background-color: #28a745; /* Green for success */
+            color: #fff;
+        }
+
+        .btn-outline-primary {
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        h2, h3, h5 {
+            font-weight: bold;
+        }
+
+        .my-5 {
+            margin-top: 3rem !important;
+            margin-bottom: 3rem !important;
+        }
+
+        .small {
+            font-size: 0.875rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">

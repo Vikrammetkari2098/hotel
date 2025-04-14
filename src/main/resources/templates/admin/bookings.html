@@ -3,6 +3,60 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>All Bookings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/img/2.jpg'); /* Replace with your desired background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .container {
+           
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+
+        table {
+            background-color: rgba(255, 255, 255, 0.9);/* Slightly transparent table background */
+            border-radius: 8px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        td {
+            color: #212529;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-sm {
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -18,7 +72,7 @@
                         <th>Hotel</th>
                         <th>Customer</th>
                         <th>Total Price</th>
-                        <th></th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,5 +92,7 @@
         </div>
     </div>
 </th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

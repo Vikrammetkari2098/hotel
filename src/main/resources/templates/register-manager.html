@@ -3,6 +3,73 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Registration Page</title>
+    <style>
+        body {
+           
+            background-image:url("/img/5.jpg");
+        }
+
+       
+
+        .card {
+            background: #ffffff;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: transparent;
+            border-bottom: none;
+            padding: 30px 20px 10px;
+            text-align: center;
+        }
+
+        .card-header h2 {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .text-danger {
+            font-size: 0.9rem;
+        }
+
+        .alert-success {
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -11,9 +78,9 @@
             <div class="col-md-8 offset-md-2">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="text-center">Hotel Manager Registration</h2>
+                        <h2>Hotel Manager Registration</h2>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body px-4">
                         <form method="post" th:action="@{/register/manager}" th:object="${user}">
                             <div class="form-group mb-3">
                                 <label class="form-label" for="username">Email:</label>
@@ -39,9 +106,9 @@
                                        placeholder="Enter last name">
                                 <p class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
                             </div>
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-4">
                                 <button type="submit" class="btn btn-primary">Register</button>
-                                <span>Already registered? <a th:href="@{/login}">Login here</a></span>
+                                <span class="ms-3">Already registered? <a th:href="@{/login}">Login here</a></span>
                             </div>
                             <div class="alert alert-success" th:if="${param.success}">
                                 Registration Successful!

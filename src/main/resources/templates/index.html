@@ -3,32 +3,79 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
-            background-image: url('/img/maldives-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
         }
+
+        .carousel-item img {
+            height: 100vh;
+            object-fit: cover;
+        }
+
         .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .btn-primary {
+            font-size: 1.5rem;
+            padding: 10px 30px;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #000;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
         }
     </style>
 </head>
 <body>
+
 <th:block layout:fragment="content">
-    <div class="content container pt-5">
-        <div class="row justify-content-center align-items-start">
-            <div class="col-12 text-center">
-                <h1 class="display-5 mb-5"><strong>"Every journey is a step closer to finding who you truly are."</strong></h1>
-                <p class="lead fs-3 mb-5">We believe in making your travel plans simple and enjoyable.<br>Let's start a new
-                    journey!</p>
-                <a href="/login" class="btn btn-primary btn-lg">Explore - Dream - Discover</a>
+
+    <!-- Image Slider (Carousel) -->
+    <div id="homepageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/4.jpg" class="d-block w-100" alt="Maldives">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/1.jpg" class="d-block w-100" alt="Beach Sunset">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/2.jpg" class="d-block w-100" alt="Island Resort">
             </div>
         </div>
     </div>
+
+    <!-- Button Content on Top of Slider -->
+    <div class="content text-center">
+        <a href="/login" class="btn btn-primary btn-lg">Explore - Dream - Discover</a>
+    </div>
+
 </th:block>
+
+<!-- Bootstrap JS (for carousel functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

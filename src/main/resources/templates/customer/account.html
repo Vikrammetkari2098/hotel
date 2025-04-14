@@ -3,8 +3,44 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Account Details</title>
-</head>
-<body>
+    <style type="text/css">
+    /* styles.css - located at src/main/resources/static/css/styles.css */
+
+/* Background image for all pages */
+body {
+    background-image: url('/img/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Makes text visible on dark image */
+}
+
+		/* Card Styling */
+		.card {
+		    background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
+		    border-radius: 10px;
+		    color: #333;
+		}
+		
+		.card-header {
+		    background-color: #007bff;
+		    color: #fff;
+		    border-radius: 10px 10px 0 0;
+		}
+		
+		.btn-primary {
+		    background-color: #007bff;
+		    border-color: #007bff;
+		}
+		
+		.btn-primary:hover {
+		    background-color: #0056b3;
+		    border-color: #004085;
+		}
+		    </style>
+		</head>
+		<body>
 <th:block layout:fragment="content">
     <div class="container">
         <div class="row justify-content-center">

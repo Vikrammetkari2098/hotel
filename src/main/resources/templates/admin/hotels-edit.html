@@ -3,6 +3,97 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Edit Hotel</title>
+    <style>
+        body {
+            background-image: url('/img/3.jpg');
+          
+            background-position: center;
+           
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+       
+
+        .card {
+            border: none;
+        }
+
+        .card-header {
+            background-color: #007bff;
+          
+            padding: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 600;
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 600;
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .text-danger {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -78,7 +169,6 @@
                                 <p class="text-danger" th:if="${#fields.hasErrors('roomDTOs[1].pricePerNight')}"
                                    th:errors="*{roomDTOs[1].pricePerNight}"></p>
                             </div>
-                            <!-- -->
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Update Hotel</button>
                                 <a th:href="@{/admin/hotels}" class="btn btn-secondary">Cancel</a>

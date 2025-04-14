@@ -26,7 +26,7 @@ public class PaymentServiceImpl implements PaymentService {
                 .totalPrice(bookingInitiationDTO.getTotalPrice())
                 .paymentStatus(PaymentStatus.COMPLETED) // Assuming the payment is completed
                 .paymentMethod(PaymentMethod.CREDIT_CARD) // Default to CREDIT_CARD
-                .currency(Currency.USD) // Default to USD
+                .currency(Currency.INR) // Default to USD
                 .build();
 
         Payment savedPayment = paymentRepository.save(payment);

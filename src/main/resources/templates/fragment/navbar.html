@@ -2,14 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Fragment: Navbar</title>
+    <!-- Make sure Bootstrap Icons are included -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light mb-3" th:fragment="navbar">
+<nav style="background-color: #00e4ff;" class="navbar navbar-expand-md navbar-light mb-3" th:fragment="navbar">
     <div class="container col-md-10">
         <a class="navbar-brand" th:href="@{/}">
             <img src="/img/Logo.PNG" alt="Logo" width="100" height="100"
-                 class="d-inline-block align-content-center">VMKS Hotel
-            
+                 class="d-inline-block align-content-center"> VMKS Hotel
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,41 +18,66 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto py-2 text-end">
+                <!-- Anonymous -->
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" th:href="@{/register/manager}">List your property</a>
+                    <a class="nav-link" th:href="@{/register/manager}">
+                        <i class="bi bi-person-badge"></i> Manager Home
+                    </a>
                 </li>
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" th:href="@{/register/customer}">Register</a>
+                    <a class="nav-link" th:href="@{/register/customer}">
+                        <i class="bi bi-pencil-square"></i> Register
+                    </a>
                 </li>
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" th:href="@{/login}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    <a class="nav-link" th:href="@{/login}">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </a>
                 </li>
+
                 <!-- Admin -->
                 <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
-                    <a class="nav-link" th:href="@{/admin/dashboard}">Dashboard</a>
+                    <a class="nav-link" th:href="@{/admin/dashboard}">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
                 </li>
+
                 <!-- Customer -->
                 <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" th:href="@{/search}">Search Hotels</a>
+                    <a class="nav-link" th:href="@{/search}">
+                        <i class="bi bi-search"></i> Search Hotels
+                    </a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" th:href="@{/customer/bookings}">Bookings</a>
+                    <a class="nav-link" th:href="@{/customer/bookings}">
+                        <i class="bi bi-journal-bookmark"></i> Bookings
+                    </a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" th:href="@{/customer/account}">My Account</a>
+                    <a class="nav-link" th:href="@{/customer/account}">
+                        <i class="bi bi-person-circle"></i> My Account
+                    </a>
                 </li>
+
                 <!-- Hotel Manager -->
                 <li class="nav-item" sec:authorize="hasRole('ROLE_HOTEL_MANAGER')">
-                    <a class="nav-link" th:href="@{/manager/dashboard}">Dashboard</a>
+                    <a class="nav-link" th:href="@{/manager/dashboard}">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ROLE_HOTEL_MANAGER')">
-                    <a class="nav-link" th:href="@{/manager/account}">My Account</a>
+                    <a class="nav-link" th:href="@{/manager/account}">
+                        <i class="bi bi-person-circle"></i> My Account
+                    </a>
                 </li>
+
                 <!-- Logout -->
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <div class="d-flex justify-content-end">
                         <form class="form-inline" method="post" th:action="@{/logout}">
-                            <button class="btn btn-link nav-link" type="submit"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                            <button class="btn btn-link nav-link" type="submit">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </button>
                         </form>
                     </div>
                 </li>

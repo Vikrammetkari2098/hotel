@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+
     <meta charset="UTF-8">
     <title>Layout: Main</title>
     <th:block th:insert="~{fragment/bootstrap :: bootstrap-css}"></th:block>
     <th:block th:insert="~{fragment/bootstrap :: bootstrap-icons}"></th:block>
     <th:block th:insert="~{fragment/jquery-ui :: jquery-ui-css}"></th:block>
+    
+    <!-- ✅ Add your global stylesheet here -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body class="d-flex flex-column vh-100">
 <th:block th:insert="~{fragment/navbar :: navbar}"></th:block>

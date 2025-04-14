@@ -3,6 +3,48 @@
       layout:decorate="~{/layout/layout-main}">
 <head>
     <title>Manager's Bookings</title>
+    <style>
+        body {
+            background-image: url('/img/6.jpg'); /* Ensure the image path is correct */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+          
+           
+           
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+            vertical-align: middle;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">
